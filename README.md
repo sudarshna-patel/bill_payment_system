@@ -22,4 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
 # bill_payment_system
+
+* Three models are there Customer, Bill and BillReceipt with their tables
+* Controllers are ApplicationController and BillsController
+* Two Routes are there in routes file
+    post 'bills/fetch'
+    post 'bills/fetchReceipt'
+
+  
