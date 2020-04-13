@@ -50,7 +50,8 @@ class BillsController < ApplicationController
                                   platformBillID: params[:platformBillID],
                                   platformTransactionRefID: params[:paymentDetails]['platformTransactionRefID'],
                                   uniquePaymentRefID: params[:paymentDetails]['uniquePaymentRefID'])
-    # need to update existing bill 
+    # need to update existing bill
+    Bill.where(billerBillID: params[:billerBillID]).update_attributes!()
     render json: {
       status: 200,
       success: true,
