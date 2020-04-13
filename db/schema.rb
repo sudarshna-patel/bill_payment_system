@@ -10,11 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_083009) do
+ActiveRecord::Schema.define(version: 2020_04_13_083723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "bill_receipts", force: :cascade do |t|
+    t.string "billerBillID"
+    t.string "platformBillID"
+    t.string "platformTransactionRefID"
+    t.string "uniquePaymentRefID"
+    t.float "amountPaid"
+    t.float "billAmount"
+    t.string "receiptId"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "bills", force: :cascade do |t|
     t.datetime "generatedOn"
@@ -40,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_04_11_083009) do
   create_table "customers", force: :cascade do |t|
     t.string "attributeName"
     t.string "displayName"
+    t.string "name"
     t.string "dataType"
     t.integer "minLength"
     t.integer "maxLength"

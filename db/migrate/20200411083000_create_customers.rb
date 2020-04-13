@@ -3,6 +3,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
     create_table :customers do |t|
       t.string  :attributeName
       t.string  :displayName
+      t.string  :name
       t.string  :dataType
       t.integer :minLength
       t.integer :maxLength
